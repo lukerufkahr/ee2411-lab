@@ -1,0 +1,120 @@
+\documentclass[a4paper, 10pt]{article}
+
+% Typography & Font Handling
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{fontspec}
+\usepackage{sectsty}
+\usepackage{fixltx2e}
+\usepackage{titlesec}
+
+% Fonts
+%\usepackage{garamondlibre}
+\setmainfont{Garamond Libre}  % Serif
+\setsansfont{TeX Gyre Heros}    % Sans
+\setmonofont{TeX Gyre Cursor}  % Mono
+
+% Mathematics
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% Numbers
+\usepackage{siunitx}
+\sisetup{
+    detect-all,   % detects the surrounding font
+    detect-family,
+    detect-shape,
+    detect-weight
+}
+
+% Lists
+\usepackage{enumitem}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{float}
+
+% Figures
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+% Circuits
+\usepackage{circuitikz}
+
+% Code Listings
+\usepackage{listings}
+
+% Layout & Page Formatting
+\usepackage{geometry}
+\usepackage{fancyhdr}
+%\usepackage{indentfirst}
+\usepackage{parskip}
+% References
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+%\usepackage{lipsum}
+
+%============================================
+\geometry{
+headheight=25pt,
+top=1in,
+bottom=1in,
+left=0.5in,
+right=0.5in
+}
+\title{ELEC ENG 2411: Ex template\vspace{5em}
+}
+\author{
+	{\Large Prepared by:}\\
+	Lucas Rufkahr\vspace{5em}\\
+	%{\Large In Collaboration with:}\\
+	%Aiden Burns\vspace{5em}\\
+	{\Large Submitted to:}\\
+	Sokrat Aldarmini\vspace{5em}\\
+	{\Large Submitted on:}\\
+	\today
+}
+\date{}
+
+\titleformat*{\section}{\Large\bfseries\sffamily}
+\renewcommand{\thesection}{\arabic{section}}
+\titleformat*{\subsection}{\large\bfseries\sffamily}
+\renewcommand{\thesubsection}{\thesection.\Alph{subsection}}
+\titleformat*{\subsubsection}{\itshape\sffamily}
+\renewcommand{\thesubsubsection}{\thesubsection.\roman{subsubsection}}
+
+\begin{document}
+\setcounter{secnumdepth}{4}
+\pagestyle{fancy}
+\fancyhead[L]{Lucas Rufkahr}%, Aiden Burns}
+\fancyhead[C]{Template}
+\fancyhead[R]{EE2411 --- Section 305\\\today}
+\maketitle
+\thispagestyle{empty}
+%========================
+\pagebreak
+\section*{Part X Step X}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.7\linewidth}{Y}
+	\end{tabularx}
+	\caption{}
+	\label{tab:}
+\end{table}
+\begin{figure}[H]
+        \centering
+        \includegraphics[scale=1]{./assets/}
+	\caption{}
+        \label{fig:}
+\end{figure}
+\end{document}
