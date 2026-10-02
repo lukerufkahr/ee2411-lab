@@ -111,7 +111,7 @@ Now we create a new vector \texttt{t1 = -2:0.1:6}. It is the same interval as be
 
 \begin{figure}[H]
         \centering
-        \includegraphics[scale=1]{./assets/part1/part1step12.png}
+        \includegraphics[scale=1]{./assets/part1/part1step2.png}
         \caption{unitStep shown with different sampling sizes.}
         \label{fig:part1step12}
 \end{figure}
@@ -151,7 +151,14 @@ We then start decreasing the sampling frequency by a factor of 2. We found that 
 \end{figure}
 
 \section*{Part 2 Step 1}
-We begin part 2 by creating a vector \texttt{t = 0:0.1:5}. We then create a vector \texttt{y\_o = 2 * (unitStep(t - 2) - unitStep((t - 2) - 0.5));} which is a rectangular starting at 2 and lasting for 0.5. We then create a new figure and plot the pulse.
+We begin part 2 by creating a vector \texttt{t = 0:0.1:5}. We then create a vector \texttt{y\_o = 2 * (unitStep(t - 2) - unitStep((t - 2) - 0.5));} which is a rectangular starting at 2 and lasting for 0.5. We then create a new figure and plot the pulse. The plot is shown in figure \ref{fig:part2step1}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part2/part2step1.png}
+	\caption{A pulse signal.}
+	\label{fig:part2step1}
+\end{figure}
 
 \section*{Part 2 Step 2}
 This step is where we calculate a convolution of this pulse with itself.
@@ -228,20 +235,92 @@ We create another vector \texttt{y2k = conv(h\_k,u2k)} using the vector \texttt{
 \end{figure}
 
 \section*{Part 4 Step 1}
+The plot for a DSP filter is shown in figure \ref{fig:part4step3}. The \texttt{randn()} function introduces noise into the signal.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part4/part4step3.png}
+	\caption{}
+	\label{fig:part4step3}
+\end{figure}
 
 \section*{Part 5 Step 1}
+We first load image data using \texttt{img1=im2double(imread('tulips.png'));}.
 
-\begin{table}[H]
-	\centering
-	\begin{tabularx}{0.7\linewidth}{Y}
-	\end{tabularx}
-	\caption{}
-	\label{tab:}
-\end{table}
+\section*{Part 5 Step 2}
+The image of the tulips is shown in figure \ref{fig:part5step2}.
+
+\section*{Part 5 Step 3}
+An image can be split into each of its color channels. The red channel is shown in figure \ref{fig:part5step3}.
+
 \begin{figure}[H]
-        \centering
-        \includegraphics[scale=1]{./assets/}
+	\centering
+	\includegraphics[scale=1]{./assets/part5/part5step3.png}
 	\caption{}
-        \label{fig:}
+	\label{fig:part5step3}
 \end{figure}
+
+\section*{Part 5 Step 4}
+The green and blue channels are shown in figures \ref{fig:part5step4g} and \ref{fig:part5step4b}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part5/part5step4g.png}
+	\caption{}
+	\label{fig:part5step4g}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part5/part5step4b.png}
+	\caption{}
+	\label{fig:part5step4b}
+\end{figure}
+
+\section*{Part 5 Step 5}
+We use the kernels \texttt{h1}, \texttt{h2}, \texttt{h3}, and \texttt{h4} to manipulate the image. The first kernel will shrink the high value pixels and increase the low valued pixels effectively reducing the dynamic changes of colors. The second will boost the center pixel and subtract the surrounding. The third kernel will subtract the bottom of the center pixel from the lower half. The fourth will do the same but it will subtract the right from the left.
+
+\section*{Part 5 Step 6}
+The first kernel appears to blur the image. This makes sense because the kernel spreads the pixel values out. The second appears to sharpen the image. This makes sense because of the boosting of the center pixel. The third appears to highlight the edges of the tulips and black out everything else. The fourth appears to have the same behavior but changes the perspective. The images for these are shown in figures \ref{fig:part5step6h1}, \ref{fig:part5step6h2}, \ref{fig:part5step6h3}, and \ref{fig:part5step6h4}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part5/part5step6h1.png}
+	\caption{}
+	\label{fig:part5step6h1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part5/part5step6h2.png}
+	\caption{}
+	\label{fig:part5step6h2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part5/part5step6h3.png}
+	\caption{}
+	\label{fig:part5step6h3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{./assets/part5/part5step6h4.png}
+	\caption{}
+	\label{fig:part5step6h4}
+\end{figure}
+
+%\begin{table}[H]
+%	\centering
+%	\begin{tabularx}{0.7\linewidth}{Y}
+%	\end{tabularx}
+%	\caption{}
+%	\label{tab:}
+%\end{table}
+%\begin{figure}[H]
+%        \centering
+%        \includegraphics[scale=1]{./assets/}
+%	\caption{}
+%        \label{fig:}
+%\end{figure}
 \end{document}
